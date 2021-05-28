@@ -2,10 +2,10 @@
   "name": "whatsapp-cowin",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
-    "start": "NODE_ENV='production' node app.js",
-    "dev": "NODE_ENV='development' nodemon app.js",
+    "start": "NODE_ENV='production' node server.js",
+    "dev": "NODE_ENV='development' nodemon server.js",
     "lt": "lt --port 8080 --subdomain ados2"
   },
   "keywords": [],
@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "aadhaar-validator": "^1.1.0",
+    "axios": "^0.21.1",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "localtunnel": "^2.0.1",
