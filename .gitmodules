@@ -1,0 +1,3 @@
+[submodule "cowin-wrapper"]
+	path = cowin-wrapper
+	url = git@github.com:SwapnilSoni1999/cowin-wrapper.git
