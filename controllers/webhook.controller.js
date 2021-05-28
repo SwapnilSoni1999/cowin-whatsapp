@@ -1,7 +1,8 @@
-const { whatsapp } = require('../config')
+const { whatsapp } = require('../app')
 
 class WebHook {
     static async handle(req, res) {
+        console.log(req.body)
         if (!req.body.messages.length) {
             return res.end() 
         }
