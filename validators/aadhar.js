@@ -1,6 +1,6 @@
 const aadharValidator = require('aadhaar-validator')
 
-exports.aadhar = (aadhar) => {
+const aadhar = (aadhar) => {
     if (isNaN(aadhar)) {
         return false
     }
@@ -11,3 +11,5 @@ exports.aadhar = (aadhar) => {
 
     return aadharValidator.isValidNumber(aadhar)
 }
+
+module.exports = aadhar
