@@ -1,4 +1,4 @@
-const Whatsapp = require('../lib/whatsapp')
+const { whatsapp } = require('../config')
 
 class WebHook {
     static async handle(req, res) {
@@ -12,7 +12,7 @@ class WebHook {
             if (!msg) {
                 return res.end()
             }
-            Whatsapp.handleMessage(waId, msg.toString().trim())
+            whatsapp.handleMessage(waId, msg.toString().trim())
             return res.end()
         }
     }
