@@ -16,6 +16,6 @@ app.get('/', (_, res) => res.json({ message: "Done!"}))
 app.post('/', require('./routes/webhook.route'))
 
 if (process.env.NODE_ENV === 'development') {
-    lt({ port: 3000, subdomain: process.env.LT_SUBDOMAIN }, (err, tunnel) => logger.info(`Localtunnel Started: ${tunnel.url}`))
+    lt({ port: PORT, subdomain: process.env.LT_SUBDOMAIN }, (err, tunnel) => logger.info(`Localtunnel Started: ${tunnel.url}`))
 }
 app.listen(PORT, logger.info(`Server started on port ${PORT}`))
