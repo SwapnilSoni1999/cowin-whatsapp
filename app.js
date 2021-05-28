@@ -1,4 +1,4 @@
-require('dotenv')
+require('dotenv').config()
 const lt = require('localtunnel')
 const express = require('express')
 const logger = require('./utils/logger')
