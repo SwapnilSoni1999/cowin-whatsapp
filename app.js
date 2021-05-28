@@ -13,6 +13,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
 app.get('/', (_, res) => res.json({ message: "Done!"}))
+app.post('/', require('./routes/webhook.route'))
 
 if (process.env.NODE_ENV === 'development') {
     lt({ port: 3000, subdomain: process.env.LT_SUBDOMAIN }, (err, tunnel) => logger.info(`Localtunnel Started: ${tunnel.url}`))
