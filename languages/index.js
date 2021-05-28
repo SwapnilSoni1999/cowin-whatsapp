@@ -9,7 +9,7 @@ const LANG = {
  * @param {'en'} lang 
  */
 const language = (lang) => {
-    LANG[lang]
+    return LANG[lang]
 }
 
 module.exports = language
