@@ -1,4 +1,4 @@
-const { whatsapp } = require('../app')
+// const { whatsapp } = require('../app')
 
 class WebHook {
     static async handle(req, res) {
