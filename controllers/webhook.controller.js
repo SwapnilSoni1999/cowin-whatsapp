@@ -12,7 +12,7 @@ class WebHook {
             if (!msg) {
                 return res.end()
             }
-            Whatsapp.handleMessage(waId, msg)
+            Whatsapp.handleMessage(waId, msg.toString().trim())
             return res.end()
         }
     }
