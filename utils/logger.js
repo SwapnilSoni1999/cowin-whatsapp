@@ -1,7 +1,7 @@
 const { createLogger, transports, format } = require('winston')
 const package = require('../package.json')
 
-const logger = winston.createLogger({
+const logger = createLogger({
     transports: [
         new transports.File({
             filename: `${package.name}-${package.version}-info.log`,
