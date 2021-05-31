@@ -1,7 +1,7 @@
 const moment = require('moment')
 
 const isFuture = (date) => {
-    const dateObj = moment(date, 'dd-mm-yyy', true)
+    const dateObj = moment(date, 'DD-MM-yyyy', true)
     if (!dateObj.isValid()) {
         throw new Error('Invalid date.')
     }
