@@ -5,7 +5,8 @@ const isFuture = (date) => {
     if (!dateObj.isValid()) {
         throw new Error('Invalid date.')
     }
-    return (parseInt(dateObj.valueOf() / 1000)) > parseInt(moment.now() / 1000)
+    const yesterday = dateObj.subtract(1, 'days')
+    return (parseInt(dateObj.valueOf() / 1000)) > parseInt(moment.now() / 1000) || dateObj.isAfter(yesterday)
 }
 
 module.exports = isFuture
