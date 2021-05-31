@@ -1,7 +1,7 @@
-const moment = require('moment')
+const moment = require('moment-timezone')
 
 const isFuture = (date) => {
-    const dateObj = moment(date, 'DD-MM-yyyy', true)
+    const dateObj = moment(date, 'DD-MM-yyyy', true).tz('Asia/Kolkata')
     if (!dateObj.isValid()) {
         throw new Error('Invalid date.')
     }
