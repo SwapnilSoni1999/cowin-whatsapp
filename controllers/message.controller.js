@@ -1,6 +1,9 @@
 const lang = require('../languages')
 const wa = require('../lib/whatsapp')
 const User = require('../models/user')
+const session = require('../lib/session')
+const { userStates } = require('../flows')
+const Flow = require('./flow.controller')
 
 class WhatsApp {
     static async handleMessage (number, message) {
@@ -11,13 +14,16 @@ class WhatsApp {
         }
         const { lang: userLang } = user
         
-        if(lang(userLang).initiate_conversation_message.includes(message)) {
+        // is an introduction message
+        if(lang(userLang).initiate_conversation_message.includes(message.toLowerCase())) {
             await Promise.all([
                 wa.sendTextMessage(number, lang(userLang).introductionMessageForthebot),
-                wa.sendTextMessage(number, lang(userLang).howMayIHelpYou)
+                wa.sendTextMessage(number, lang(userLang).howMayIHelpYou),
+                session.setState(number, userStates.intro)
             ])
         }
 
+        return await Flow.enter(number, userLang, user.state, message)
     }
 }
 
