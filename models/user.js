@@ -6,7 +6,8 @@ const UserSchema = new Schema({
     txnId: { type: String, default: null },
     token: { type: String, default: null },
     lang: { type: String, default: 'en' },
-    state: { type: String, default: null }
+    state: { type: String, default: null },
+    beneficiaries: { type: Array, default: null }
 })
 
 const User = model('User', UserSchema, 'users')
