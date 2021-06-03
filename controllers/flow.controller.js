@@ -96,6 +96,10 @@ class Flow {
                     session.setState(number, userStates.intro)
                 ])
             }
+
+            default: {
+                return await wa.sendTextMessage(number, lang(userLang).default_error_message)
+            }
         }
     }
 }
