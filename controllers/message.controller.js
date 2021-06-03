@@ -16,11 +16,9 @@ class WhatsApp {
         
         // is an introduction message
         if(lang(userLang).initiate_conversation_message.includes(message.toLowerCase())) {
-            await Promise.all([
-                wa.sendTextMessage(number, lang(userLang).introductionMessageForthebot),
-                wa.sendTextMessage(number, lang(userLang).howMayIHelpYou),
-                session.setState(number, userStates.intro)
-            ])
+            await wa.sendTextMessage(number, lang(userLang).introductionMessageForthebot)
+            await wa.sendTextMessage(number, lang(userLang).howMayIHelpYou)
+            return await session.setState(number, userStates.intro)
         }
 
         return await Flow.enter(number, userLang, user.state, message)
