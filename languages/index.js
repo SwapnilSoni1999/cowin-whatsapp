@@ -1,12 +1,16 @@
 const en = require('./en')
+const hi = require('./hi')
+const kan = require('./kan')
 
 const LANG = { 
-    en
+    en,
+    hi,
+    kan
 }
 
 /**
  * Choose language
- * @param {'en'} lang 
+ * @param {'en'|'hi'|'kan'} lang 
  */
 const language = (lang) => {
     return LANG[lang]
